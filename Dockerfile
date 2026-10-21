@@ -10,4 +10,4 @@ RUN composer install --no-dev --ignore-platform-reqs --no-interaction \
  && cp -n .env.example .env && touch database/database.sqlite \
  && chmod -R 777 storage bootstrap/cache database
 ENV APP_ENV=production APP_DEBUG=false DB_CONNECTION=sqlite DB_DATABASE=/app/database/database.sqlite
-CMD sh -c "php artisan config:clear && php artisan migrate:fresh --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
+CMD sh -c "php artisan key:generate --force && php artisan config:clear && php artisan migrate:fresh --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
