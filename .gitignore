@@ -15,3 +15,9 @@ _ide_helper.php
 storage
 .phpstorm.meta.php
 .editorconfig
+
+.env
+vendor/
+node_modules/
+database/database.sqlite
+.DS_Store
